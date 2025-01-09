@@ -1,5 +1,5 @@
 .data
-	msg: .asciiz "Hello Sudanirpua...\n"
+	msg: .asciiz "Hello World...\n"
 
 .text
 main:
