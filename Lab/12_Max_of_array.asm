@@ -17,8 +17,8 @@ main:
 	li $t1, 0
 	la $t2, arr
 	
-	while:
-		beq $t1, $t0, break
+	In_loop:
+		beq $t1, $t0, Output
 		li $v0, 4
 		la $a0, p2
 		syscall
@@ -30,42 +30,32 @@ main:
 		addi $t1, $t1, 1
 		addi $t2, $t2, 4
 		
-		j while
+		j In_loop
 		
-	break:
+	Output:
 		li $v0, 4
 		la $a0, out
 		syscall
 		
 		li $t1, 0
 		la $t2, arr
-		
-		li $t4, 0
  	
 	Out_loop:
 		beq $t1, $t0, Exit
 		
-		lw $t5, 0($t2)
+		lw $a0, 0($t2)
+		li $v0, 1
+		syscall
 		
-		bge $t5, $t4, peye_gechi
-		j pai_nai
+		li $v0, 4
+		la $a0, space
+		syscall
 		
-		peye_gechi:
-			addi $t4, $t5, 0
-			j continue
-		pai_nai:
-			j continue
-			
-		continue:
 		addi $t1, $t1, 1
 		addi $t2, $t2, 4
 		
 		j Out_loop
 	Exit:
-		li $v0, 5
-		move $a0, $t4
-		syscall
-		
 		li $v0,10
 		syscall
 		

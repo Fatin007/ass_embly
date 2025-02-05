@@ -12,7 +12,7 @@ main:
   	syscall
   	move $t0, $v0
   	
-  	addi $t1, $zero, 2
+  	li $t1, 2
   	
   	div $t0, $t1
   	
@@ -26,13 +26,11 @@ main:
   		la $a0, Ev
   		syscall
   		j exit
-  		
   	odd:
   		li $v0, 4
   		la $a0, Od
   		syscall
   		j exit
-	
 	exit:
 		li $v0,10
 		syscall

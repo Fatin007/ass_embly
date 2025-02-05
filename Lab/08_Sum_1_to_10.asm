@@ -1,8 +1,8 @@
 .data
 	msg: .asciiz "Sum: "
 .text
-	addi $t0, $zero, 1
-	addi $t1, $zero, 0
+	li $t0, 1 # Counter
+	li $t1, 0 # Sum
 	loop:
 		beq $t0, 11, Exit
 		
