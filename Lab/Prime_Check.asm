@@ -47,3 +47,4 @@
 		print_int($t1)
 		print_str(" is Not Prime")
 		done
+		
