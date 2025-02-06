@@ -30,6 +30,7 @@
 	li $t0, 2
 	
 	beq $t1, 1, Not_Prime
+	beqz $t1, Not_Prime
 	
 	loop:
 		beq $t0, $t1, Prime
