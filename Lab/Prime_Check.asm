@@ -40,11 +40,10 @@
 		j loop
 	Prime:
 		print_int($t1)
-		print(" is Prime)
+		print_str(" is Prime")
 		done
 		
 	Not_Prime:
 		print_int($t1)
-		print(" is Not Prime)
+		print_str(" is Not Prime")
 		done
-		
