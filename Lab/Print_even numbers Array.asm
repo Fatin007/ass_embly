@@ -50,13 +50,23 @@ main:
 		
 		li $t1, 0
 		la $t2, arr
+		li $t3, 2
  	
 	Out_loop:
 		beq $t1, $t0, Exit
 		
 		lw $s0, 0($t2)
-		print_int($s0)
-		print_str(" ")
+		
+		div $s0, $t3
+		mfhi $t4
+		beqz $t4, Even_paisi
+		j continue
+		
+		Even_paisi:
+			print_int($s0)
+			print_str(" ")
+			j continue
+		continue:
 		
 		addi $t1, $t1, 1
 		addi $t2, $t2, 4
